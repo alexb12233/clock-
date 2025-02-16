@@ -4,7 +4,14 @@ function time() {
     var hours=date.getHours()
     var mins=date.getMinutes()
     var secs=date.getSeconds()
-    var clock=hours+':'+mins+':'+secs
-    document.getElementById("1").innerhtml=clock
+    var session=0
+    if (hours>=12){
+        session='pm'
+    }
+    if (hours<12){
+        session='am'
+    }
+    var clock=hours+':'+mins+':'+secs+session
+    document.getElementById("1").innerHTML=clock
     setInterval(time,1000)
 }
